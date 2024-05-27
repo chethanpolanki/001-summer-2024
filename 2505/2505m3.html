@@ -1,0 +1,47 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <!-- "get" and "post" methods
+        
+            submit can be seen in the url
+            "look about it later"
+            and what does action do
+        -->
+        <form method= "get" action="validate.php">
+            <label for="name"> Name</label>
+            <input type="text" name = "name" id="name" placeholder="enter your name ">
+            <br>
+            <label for="password">password</label>
+            <input type="password">
+
+            <br>
+
+            <input type="radio" name ="gender" id ="m"><label for="m">Male</label>            
+            <input type="radio" name ="gender"> Female
+<br>
+            <input type="checkbox" name="en"> English
+            <input type="checkbox" name="tl"> Telugu
+
+            <br>
+            <select name ="state">
+                <optgroup label="south">
+                    <option value = "ap" >andhra</option>
+                    <option value = "ap" >andhra</option>
+                    <option value = "ap" >andhra</option>
+                    <option value = "ap" >andhra</option>
+                </optgroup>
+            </select>
+<br>
+<!-- can use multiple to select multiple from a dropdown -->
+
+            <select name = "car" multiple>
+                <option>PORSCHE</option>
+                <option>masrati</option>
+            </select>
+            <br>
+            <textarea name="fb" rows ="10" cols="30"></textarea>   
+        </form>
+    </body>
+</html>

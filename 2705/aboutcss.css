@@ -1,0 +1,68 @@
+
+/* 1. inline css */
+/* 2. internal css */
+/* 3. external css */
+/* 
+    this is inline css
+    <html>
+        <head>
+            <title>chethan</title>
+        </head>
+        <body>
+        <p style="color:red;">chethan</p>
+            <h1>chethan</h1>
+        </body>
+    </html>
+*/
+/* 
+    this is internal css
+    <html>
+        <head>
+            <style>
+            /* these are selectors whereever this comes the same style will be followed
+                p{
+                    color:red;
+                }
+                h1{
+                    color:blue;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>chethan</h1>
+        </body>
+    </html>
+*/
+/* 
+    this is external css
+    <html>
+        <head>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <h1>chethan</h1>
+        </body>
+    </html>
+*/
+/* 
+                if we want to choose particular paragraph then
+                we use id and if we want to choose h1 then we use class or tag name
+                <p id="p1">chethan</p>
+                <h1 class="h1">chethan</h1>
+                <p class="p1">chethan</p>
+                <style>
+                    #p1{
+                        color:red;
+                    }
+                    .h1{
+                        color:blue;
+                    }
+                    .p1{
+                        color:green;
+                    }
+                    .cl{
+                        /*class
+                        color:purple;
+                    }
+                </style>
+*/
