@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> 3105</title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #060606;
+
+        }
+        li{
+            float: left;
+        }
+        li a{
+            display: block;
+            color: white;
+            text-align: center;
+            /* in padding there are two values meaning top and bottom, if there are three values then top, right and bottom */
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover{
+            background-color: burlywood;
+        }
+        li ul{
+            display: none;
+            position: absolute;
+        }
+        li:hover ul{
+            
+            display: block;
+        }
+        li ul li{
+            clear: both;
+            /* for vertical */
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">menu1</a>
+        </li>
+        <li>
+            <a href="#">menu2</a>
+            <ul>
+                <li>
+                    <a href="#">submenu1</a>
+                </li>
+                <li>
+                    <a href="#">submenu2</a>
+                </li>
+                <li>
+                    <a href="#">submenu3</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">menu3</a>
+        </li>
+        <li>
+            <a href="#">menu4</a>
+        </li>
+        <li>
+            <a href="#">menu5</a>
+        </li>
+    </ul>
+</body>
+</html>

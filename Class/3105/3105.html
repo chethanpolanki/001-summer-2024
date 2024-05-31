@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> 3105</title>
+        <style>
+            div{
+                border: 2px solid blue;
+                width: 400px;
+            }
+            p{
+                display: flex;
+            }
+            div:hover p{
+                display: block;
+            }
+            table tr td{
+                border: 2px solid red;
+            }
+            tr:hover{
+                background-color: black;
+                color: aliceblue;
+            }
+            tr:first-child{
+                background-color: red;
+            }
+            tr:nth-child(even){
+                background-color: aqua;
+                color: aliceblue;
+            }
+            /* for link */
+            a:link{
+                /* this is for unvisited */
+                color: bisque;
+
+            }
+            a:visited{
+                color: green;
+            }
+            a:hover{
+                background-color: blueviolet;
+
+            }
+            a:active{
+                font-size: large;
+                font-weight: bold;
+            }
+            /* for input type check again */
+            input[type="text"]:focus{
+                background-color: yellow;
+            }
+            input[type="text"]:valid{
+                border: solid blue;
+            }
+            p::first-letter{
+                font-size: xx-large;
+                font-weight: bold;
+                color: yellowgreen;
+            }
+            li::marker{
+                color: blue;
+            }
+            ::selection{
+                background-color: yellowgreen;
+                color: rebeccapurple;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://chethanpolanki.me">Chethan Polanki</a><br><br>
+        <a href="vit.ac.in" >VIT</a>
+        <br><br>
+        <input type="text" pattern="[A-Za-z ]{3,}" required>input<br><br>
+
+        <table>
+            <th>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+            </th>
+        </table>
+        <div>
+            <p>hello</p>
+            <h1>chethanpolanki</h1>
+
+        </div>
+    </body>
+</html>
