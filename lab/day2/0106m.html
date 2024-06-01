@@ -1,0 +1,76 @@
+<head>
+    <title>IPWT Form</title>
+</head>
+<body>
+    <form>
+        <h1>Personal Info</h1>
+        
+        <span for="email">Email:</span>
+        <input type="email" id="email" name="email" required placeholder="Enter your email"><br><br>
+        
+        <span for="password">Password:</span>
+        <input type="password" id="password" name="password" required pattern=".{8,}" placeholder="At least 8 characters"><br><br>
+        
+        <span>Gender:</span>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <span for="male">Male</span>
+        <input type="radio" id="female" name="gender" value="female">
+        <span for="female">Female</span>
+        <br><br>
+        <span for="dob">DOB:</span>
+        <input type="date" id="dob" name="dob" required><br><br>
+    
+        <h1>Preferences</h1>
+        
+        <span for="favcolor">Favorite Color:</span>
+        <select id="favcolor" name="favcolor" required>
+            <option value="" disabled selected>Select a color</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+        </select><br><br>
+
+        <span>Interests:</span><br>
+        <input type="checkbox" id="sports" name="interests" value="sports">
+        <span for="sports">Sports</span><br>
+        
+        <input type="checkbox" id="music" name="interests" value="music">
+        <span for="music">Music</span><br>
+        
+        <input type="checkbox" id="technology" name="interests" value="technology">
+        <span for="technology">Technology</span><br>
+        
+        <input type="checkbox" id="arts" name="interests" value="arts">
+        <span for="arts">Arts</span><br><br>
+
+        <span for="languages">Languages:</span><br>
+        <select id="languages" name="languages[]" multiple>
+            <option value="hindi" selected>Hindi</option>
+            <option value="english">English</option>
+            <option value="bengali">Bengali</option>
+            <option value="telugu">Telugu</option>
+            <option value="marathi">Marathi</option>
+            <option value="tamil">Tamil</option>
+            <option value="urdu">Urdu</option>
+            <option value="gujarati">Gujarati</option>
+            <option value="malayalam">Malayalam</option>
+            <option value="kannada">Kannada</option>
+            <option value="oriya">Oriya</option>
+            <option value="punjabi">Punjabi</option>
+            <option value="assamese">Assamese</option>
+        </select><br><br>
+        <br><br>
+        
+        
+        <span for="comments">Comments:</span><br>
+        <textarea id="comments" name="comments" rows="5" cols="40" placeholder="Enter your comments here..."></textarea><br><br>
+        
+        <span for="fileupload">Upload a file:</span>
+        <input type="file" id="fileupload" name="fileupload"><br><br>
+
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
