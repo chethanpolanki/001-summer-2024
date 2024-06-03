@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>chethan  </title>
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                border: 2px solid black;
+                margin-top: 20px;
+
+                
+            }
+
+            #d1:hover{
+                transform: translate(50px, 100px);
+            }
+            #d2:hover{
+                transform: rotate(-45deg);}
+            #d3:hover{
+                /* can do X Y Z */
+                transform: rotateY(45deg);}
+            #d4:hover
+            {
+                transform: scale(2,3);
+            }
+            #d5:hover
+            {
+                width: 200px;
+                height: 200px;
+                transform: rotate(180deg);
+                transition:width 2s, height 3s, transform 4s;
+                transition-delay: 2s;
+            }
+
+            #d6:hover
+            {
+                transform:200px ;
+                transition-timing-function:ease-in ;
+            }
+            #d7:hover
+            {
+                transform: rotateX(45deg);
+            }
+            @keyframes chethan
+            {
+                0%{background-color: aqua; top: 0; left: 0;}
+                25%{background-color: red;top: 0; left: 200px;}
+                50%{background-color: lightcoral; top: 200px; left: 200px;}
+                75%{background-color: yellow;top: 200px; left: 0px;}
+                100%{background-color: green;top: 0;left: 0;}
+                
+            }
+            #d8
+            {
+                animation-name: chethan;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                animation-delay:1s;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d1" style="background-color: aqua; "> </div>
+        <div id="d2" style="background-color: red;">Rotation</div>
+        <div id="d3" style="background-color: lightcoral;">3D</div>
+        <div id="d4" style="background-color: yellow;"> </div>
+        <div id="d5" style="background-color: green;"> translation and transform </div>
+        <div id="d6" style="background-color: blue;"> </div>
+        <div id="d7" style="background-color: pink;"> </div>
+        <div id="d8" style="background-color: rgb(104, 72, 72);"> </div>
+    </body>
+</html>
