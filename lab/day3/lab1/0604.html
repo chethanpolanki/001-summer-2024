@@ -1,0 +1,122 @@
+<html>
+<head>
+    <title>CSS Form - Pseudo Classes</title>
+    <style>
+        body {
+            background-color: #202020;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffc9c9;
+            padding: 20px;
+            border-radius: 30px 0px 30px 0px;
+            box-shadow: 0 0 5px rgb(151, 108, 108);
+            text-align: center;
+            width: 700px;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #453e3e;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        input[type="submit"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            background-color: #fff;
+            
+        }
+        input[type="text"]:invalid,
+        input[type="password"]:invalid,
+        input[type="email"]:invalid,
+        input[type="number"]:invalid,
+        input[type="date"]:invalid
+        {
+            border-color: red;
+            border-width: 1px;
+        }
+        input[type="text"]:valid,
+        input[type="password"]:valid,
+        input[type="email"]:valid,
+        input[type="number"]:valid,
+        input[type="date"]:valid {
+            border-color: green;
+            border-width: 1px;
+        }
+        .radio-group,
+        .checkbox-group {
+            display:block;        
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Form - Pseudo Classes</h1>
+        <form>
+            <input type="text" placeholder="User Name *" name="username" pattern="[A-Za-z0-9]{3,}" required>
+            <input type="password" placeholder="Password *" name="password" pattern=".{6,}" required>
+            
+            <input type="date" placeholder="DOB *" name="dob" required>
+            <input type="email" placeholder="eMail id *" name="email" required>
+            <input type="number" placeholder="Mobile Number *" name="mobile" required>
+            
+            <div class="radio-group">
+                 
+                <input type="radio" name="gender" value="male" required> Male
+                <input type="radio" name="gender" value="female" required> Female
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" name="language" value="english" required> English
+                <input type="checkbox" name="language" value="hindi" required> Hindi
+                <input type="checkbox" name="language" value="telugu" required> Telugu
+                <input type="checkbox" name="language" value="marathi" required> Marathi
+                <input type="checkbox" name="language" value="bengali" required> Bengali
+                <input type="checkbox" name="language" value="kannada" required> Kannada
+                <input type="checkbox" name="language" value="gujarati" required> Gujarati
+                <input type="checkbox" name="language" value="tamil" required> Tamil
+                <input type="checkbox" name="language" value="punjabi" required> Punjabi
+
+            </div>
+            <select name="state" required>
+                <option value="">Select State *</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Kerala">Kerala</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Bihar">Bihar</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
