@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>string</title>
+    </head>
+    <body>
+        <h1 id="h1"></h1>
+        <h2 id="h2"></h2>
+        <h3 id="h3"></h3>
+        <h4 id="h4"></h4>
+        <h5 id="h5"></h5>
+        <h6 id="h6"></h6>
+        <h7 id="h7"></h7>
+        <h8 id="h8"></h8>
+        <h9 id="h9"></h9>
+        <h10 id="h10"></h10>
+        <h11 id="h11"></h11>
+        <h12 id="h12"></h12>
+        <h13 id="h13"></h13>
+        <h14 id="h14"></h14>
+        <h15 id="h15"></h15>
+        <h16 id="h16"></h16>
+        <h17 id="h17"></h17>
+        <h18 id="h18"></h18>
+        <h19 id="h19"></h19>
+        <h20 id="h20"></h20>
+
+        <script>
+            var a = "this is a string";
+            var a1 = 'This is a string';
+            var a2 = "this is a string,'this is a string'";
+            var a3 =`they say: ${a}`;
+            let d = `they say "he is over they"${al}`;
+            document.getElementById("h1").innerHTML = a3;
+            document.getElementById("h2").innerHTML = a.slice(5,9);
+            document.getElementById("h3").innerHTML = a.slice(-12, -8);
+            document.getElementById("h4").innerHTML = a.substring(5,9);
+            document.getElementById("h5").innerHTML = a.substr(5,9);
+            var b = a.split(" ");
+            document.getElementById("h6").innerHTML = b;
+            document.getElementById("h7").innerHTML = a.split("").reverse().join("");
+            document.getElementById("h8").innerHTML = a.indexOf("is",4);
+            // a.charAt(9)
+            // a.charCodeAt(9)
+            //a.at(-9) - this can take the negitive number
+            //a.toUpperCase()
+            //a.toLowerCase()
+            //a.trim()
+            //a.trimStart()
+            //a.trimEnd()
+            //a.padding(20,"*")
+            document.getElementById("h9").innerHTML = a.replace("is","was");
+            document.getElementById("h10").innerHTML = a.replace(/is/g,"was");
+            var c = "the rain in SPAIN is always in the plain";
+            document.getElementById("h11").innerHTML = c.search(/ain/gi,"ainsss");
+            if(c.match(/pin/))
+            {
+                document.getElementById("h12").innerHTML = true;
+            }
+            var person={fname:"chethan",lname:"polanki", age:35};
+            document.getElementById("h13").innerHTML = person.fname + person.lname;
+            document.getElementById("h14").innerHTML = person["fname"] + person["lname"];
+            t ="";
+            for(x in person)
+            {
+                t+=person[x]+" ";
+            }
+            document.getElementById("h15").innerHTML = t;
+            // set interval function
+            // set timeout function
+            // d.getSeconds()
+            // d.getMinutes()
+            // d.getHours()
+            // d.getDate()
+            // d.getDay()
+            // d.getMonth()
+            // d.getFullYear()
+            // d.getTime()
+            //d = new Date();
+            // all timeout functions, set timeout, set time interval, clear timeout, clear time interval
+
+
+
+
+        </script>
+    </body>
+</html>
