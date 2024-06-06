@@ -1,0 +1,58 @@
+<!-- arrays -->
+<html>
+    <body>
+
+        <script>
+            var a = [1,2,3,4,5];
+            document.getElementById("h1").innerHTML = a.length;
+            var al = [];
+            var a2 = new Array();
+            var a3 = new Array(1,2,3);
+            var a4 = new Array(10);
+            document.getElementById("h2").innerHTML = a4.length;
+            var a5 =[[1,2,3],[4,5,6][7,8,9]];
+
+            for (x in a)
+            {
+                t += x+" ";
+            }
+            document.getElementById("h3").innerHTML = t;
+            for (x of a)
+            {
+                t += x +" ";
+            }
+            document.getElementById("h4").innerHTML = t;
+            document.getElementById("h5").innerHTML = a;
+            document.getElementById("h6").innerHTML = a.join(" and ");
+            // pop method a.pop()
+            // push method a.push(10)
+            // delete a[1]
+            // a.unshift(10)
+            // a.splice(2,2,"a","b","c")
+            var b = ["alpha","beta","gamma","delta","epsilon"];
+            document.getElementById("h7").innerHTML = b.splice(1,2,"tetanam","eta","theta");
+            document.getElementById("h8").innerHTML = b.sort();
+            document.getElementById("h9").innerHTML = a.sort(function(a,b){
+                return a-b;
+                // in decending b-a;
+            });
+            document.getElementById("h10").innerHTML = a.reverse();
+            sum = 0;
+            var result = a.forEach(myfun1);
+            function myfun1(value, index, array)
+            {
+                sum += value;
+                return sum;
+            }
+            document.getElementById("h11").innerHTML = result;
+
+            varb = a.map(myfun2);
+            function myfun2(value, index, array)
+            {
+                return value*2;
+            }
+            document.getElementById("h12").innerHTML = b1;
+
+        </script>
+    </body>
+</html>
