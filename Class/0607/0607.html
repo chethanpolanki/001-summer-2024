@@ -1,0 +1,72 @@
+<html>
+    <body>
+        <script>
+            function fun1(){
+                document.write("Hello")
+            }
+
+            fun1();
+            function fun2(a,b){
+                document.write(a*b)
+            }
+            fun2(2,3)
+            function fun3(a,b =5){
+                return a*b;
+            }
+            document.write("<br>");
+            document.write(fun3(5));
+
+            const x = function(a,b){return a+b;}
+            // something fed up in bottom func by maam
+            const z = (a,b)=>{return x*y}
+
+            var y = x(6,7);
+            document.write("<br>");
+            document.write(y);
+            document.write("<br>");
+            document.write(z(3,4));
+
+            (function(){
+                document.write("<br>");
+                document.write("called the function by using () in the code");
+
+            })();
+            function fun4(...args){
+                sum = 0;
+                for(t of args){
+                    sum += t;
+                }
+                return sum;
+            }
+            var result = fun4(1,2,3,4,5,6,7,8,9,10);
+            document.write("<br>");
+            document.write(result);
+
+            function fun5(){
+                product = 1;
+                for (i = 1; i <= arguments.length; i++)
+                {
+                    product *= arguments[i];
+                }
+                return product;
+            }
+            var result = fun5(1,2,3,4);
+            document.write("<br>");
+            document.write(result);
+            
+            const add = (function(){
+                counter = 0;
+                return function(){
+                    counter += 1;
+                    return counter;
+                }
+            })();
+            document.write("<br>");
+            document.write(add);
+            document.write("<br>");
+            document.write(add());
+            document.write("<br>");
+            document.write(add());
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises</title>
+    <script>
+        function loadScript(scriptName) {
+            const script = document.createElement('script');
+            script.src = scriptName;
+            script.onload = () => console.log(`${scriptName} loaded successfully`);
+            script.onerror = () => console.log(`Error loading ${scriptName}`);
+            document.body.appendChild(script);
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Exercises</h1>
+    <ul>
+        <li><a href="#" onclick="loadScript('0606-1.js')">Arithmetic Operations</a></li>
+        <li><a href="#" onclick="loadScript('0606-2.js')">Variable Data Types</a></li>
+        <li><a href="#" onclick="loadScript('0606-3.js')">Factorial</a></li>
+        <li><a href="#" onclick="loadScript('0606-4.js')">Fibonacci Sequence</a></li>
+        <li><a href="#" onclick="loadScript('0606-5.js')">Palindrome Check</a></li>
+        <li><a href="#" onclick="loadScript('0606-6.js')">Prime Check</a></li>
+        <li><a href="#" onclick="loadScript('0606-7.js')">Calculate Grade</a></li>
+        <li><a href="#" onclick="loadScript('0606-8.js')">Greeting Based on Time</a></li>
+        <li><a href="#" onclick="loadScript('0606-9.js')">Display Patterns</a></li>
+        <li><a href="#" onclick="loadScript('0606-10.js')">Movies of the Week</a></li>
+    </ul>
+</body>
+</html>
