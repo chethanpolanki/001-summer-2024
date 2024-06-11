@@ -1,0 +1,296 @@
+<!-- <html >
+<head>
+    <title>JS Form Validation</title>
+    <script>
+        function validateForm() {
+            let username = document.forms["myForm"]["username"].value;
+            let password = document.forms["myForm"]["password"].value;
+            let dob = document.forms["myForm"]["dob"].value;
+            let email = document.forms["myForm"]["email"].value;
+            let mobile = document.forms["myForm"]["mobile"].value;
+            let gender = document.forms["myForm"]["gender"].value;
+            let languages = document.forms["myForm"]["languages"];
+            let state = document.forms["myForm"]["state"].value;
+            let langChecked = false;
+            
+            // Username validation
+            if (!/^[a-zA-Z]+$/.test(username)) {
+                alert("Username can only contain upper and lower case alphabets.");
+                return false;
+            }
+
+            // Password validation
+            if (!/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
+                alert("Password must be at least 8 characters long and contain at least one upper case letter, one number, and one special character.");
+                return false;
+            }
+
+            // DOB validation
+            if (dob === "") {
+                alert("Date of Birth is required.");
+                return false;
+            }
+
+            // Email validation
+            if (email === "") {
+                alert("Email is required.");
+                return false;
+            }
+
+            // Mobile number validation
+            if (!/^\d{10}$/.test(mobile)) {
+                alert("Mobile number must be 10 digits.");
+                return false;
+            }
+
+            // Gender validation
+            if (gender === "") {
+                alert("Please select your gender.");
+                return false;
+            }
+
+            // Languages validation
+            for (let i = 0; i < languages.length; i++) {
+                if (languages[i].checked) {
+                    langChecked = true;
+                    break;
+                }
+            }
+            if (!langChecked) {
+                alert("Please select at least one language.");
+                return false;
+            }
+
+            // State validation
+            if (state === "") {
+                alert("Please select your state.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm" onsubmit="return validateForm()">
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="dob">DOB:</label>
+        <input type="text" id="dob" name="dob" required><br><br>
+
+        <label for="email">eMail id:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="number" id="mobile" name="mobile" required><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male" required> Male
+        <input type="radio" id="female" name="gender" value="Female" required> Female<br><br>
+
+        <label>Languages known:</label>
+        <input type="checkbox" id="english" name="languages" value="English"> English
+        <input type="checkbox" id="hindi" name="languages" value="Hindi"> Hindi
+        <input type="checkbox" id="french" name="languages" value="French"> French<br><br>
+
+        <label for="state">State:</label>
+        <select id="state" name="state" required>
+            <option value="">Select State</option>
+            <option value="State1">State1</option>
+            <option value="State2">State2</option>
+            <option value="State3">State3</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html> -->
+
+
+
+<html >
+<head>
+    <title>JS Form Validation</title>
+    <style>
+        body {
+            background-color: #202020;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffc9c9;
+            padding: 20px;
+            border-radius: 30px 0px 30px 0px;
+            box-shadow: 0 0 5px rgb(151, 108, 108);
+            text-align: center;
+            width: 400px;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #453e3e;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        input[type="submit"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            background-color: #fff;
+        }
+        input[type="text"]:invalid,
+        input[type="password"]:invalid,
+        input[type="email"]:invalid,
+        input[type="number"]:invalid,
+        input[type="date"]:invalid {
+            border-color: red;
+            border-width: 1px;
+        }
+        input[type="text"]:valid,
+        input[type="password"]:valid,
+        input[type="email"]:valid,
+        input[type="number"]:valid,
+        input[type="date"]:valid {
+            border-color: green;
+            border-width: 1px;
+        }
+        .radio-group,
+        .checkbox-group {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let form = document.forms["myForm"];
+            let username = form["username"].value;
+            let password = form["password"].value;
+            let dob = form["dob"].value;
+            let email = form["email"].value;
+            let mobile = form["mobile"].value;
+            let gender = form["gender"].value;
+            let languages = form["languages"];
+            let state = form["state"].value;
+            let langChecked = false;
+            
+            if (!/^[a-zA-Z]+$/.test(username)) {
+                alert("Username can only contain upper and lower case alphabets.");
+                return false;
+            }
+            if (!/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
+                alert("Password must be at least 8 characters long and contain at least one upper case letter, one number, and one special character.");
+                return false;
+            }
+            if (dob === "") {
+                alert("Date of Birth is required.");
+                return false;
+            }
+            if (email === "") {
+                alert("Email is required.");
+                return false;
+            }
+            if (!/^\d{10}$/.test(mobile)) {
+                alert("Mobile number must be 10 digits.");
+                return false;
+            }
+
+            if (gender === "") {
+                alert("Please select your gender.");
+                return false;
+            }
+            for (let i = 0; i < languages.length; i++) {
+                if (languages[i].checked) {
+                    langChecked = true;
+                    break;
+                }
+            }
+            if (!langChecked) {
+                alert("Please select at least one language.");
+                return false;
+            }
+            if (state === "") {
+                alert("Please select your state.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>JS Form Validation</h1>
+        <form name="myForm" onsubmit="return validateForm()">
+            <input type="text" placeholder="User Name *" name="username" pattern="[A-Za-z]+" required>
+            <input type="password" placeholder="Password *" name="password" required>
+            <label>DOB:</label>
+            <input type="date" placeholder="DOB *" name="dob" required>
+            <input type="email" placeholder="eMail id *" name="email" required>
+            <input type="number" placeholder="Mobile Number *" name="mobile" required>
+            
+            <div class="radio-group">
+                <label>Gender:</label>
+                <br>
+                <input type="radio" name="gender" value="male" required> Male
+                <input type="radio" name="gender" value="female" required> Female
+            </div>
+            
+            <div class="checkbox-group">
+                <label>Languages known:</label>
+                <br>
+
+                <input type="checkbox" name="language" value="english" required> English
+                <input type="checkbox" name="language" value="hindi" required> Hindi
+                <input type="checkbox" name="language" value="telugu" required> Telugu
+                <input type="checkbox" name="language" value="marathi" required> Marathi
+                <input type="checkbox" name="language" value="bengali" required> Bengali
+                <input type="checkbox" name="language" value="kannada" required> Kannada
+                <input type="checkbox" name="language" value="gujarati" required> Gujarati
+                <input type="checkbox" name="language" value="tamil" required> Tamil
+                <input type="checkbox" name="language" value="punjabi" required> Punjabi
+            </div>
+            
+            <label for="state">State:</label>
+            <select name="state" required>
+                <option value="">Select State *</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Kerala">Kerala</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Bihar">Bihar</option>
+            </select><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
