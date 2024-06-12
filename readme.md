@@ -1,6 +1,6 @@
 # IPWT Course
 
-This repository contains all the materials and notes related to the IPWT (Internet Programming with Tools) course. Below is a detailed list of contents organized into various sections for easy navigation.
+This repository contains all the materials and notes related to the IPWT (Internet Programming Web Technologies) course. Below is a detailed list of contents organized into various folders in this repo for easy navigation.
 
 ## List of Contents
 
@@ -30,5 +30,3 @@ This section contains notes and materials from all the classes:
 2. Any missing folders or files will be created and uploaded as the course progresses.
 3. If you find any discrepancies or have suggestions, feel free to contribute or contact me.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
