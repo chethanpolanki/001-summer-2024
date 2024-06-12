@@ -1,0 +1,166 @@
+<html>
+<head>
+    <title>JS Form</title>
+    <style>
+    /* Style section - not used for this explanation */
+    </style>
+    <script>
+        // This function will check if the form is filled out correctly
+        function validateForm() {
+            // Get the form by its name "myForm"
+            let form = document.forms["myForm"];
+
+            // Get the values entered by the user in the form fields
+            let username = form["username"].value;
+            let password = form["password"].value;
+            let dob = form["dob"].value;
+            let email = form["email"].value;
+            let mobile = form["mobile"].value;
+            let gender = form["gender"].value;
+            let languages = form["language"];
+            let state = form["state"].value;
+            let langChecked = false; // To check if any language is selected
+
+            // Patterns to check if the entered values are correct
+            let usernamePattern = /^[a-zA-Z]+$/; // Only letters
+            let passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; // Password with specific requirements
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email format
+            let mobilePattern = /^\d{10}$/; // 10 digit number
+
+            // Check if the username is only letters
+            if (!usernamePattern.test(username)) {
+                alert("Username can only contain upper and lower case alphabets.");
+                return false; // Stop the form from submitting
+            }
+            // Check if the password meets the requirements
+            if (!passwordPattern.test(password)) {
+                alert("Password must be at least 8 characters long and contain at least one upper case letter, one number, and one special character.");
+                return false; // Stop the form from submitting
+            }
+            // Check if date of birth is filled
+            if (dob === "") {
+                alert("Date of Birth is required.");
+                return false; // Stop the form from submitting
+            }
+            // Check if the email is in correct format
+            if (!emailPattern.test(email)) {
+                alert("Email is not valid.");
+                return false; // Stop the form from submitting
+            }
+            // Check if the mobile number is 10 digits
+            if (!mobilePattern.test(mobile)) {
+                alert("Mobile number must be 10 digits.");
+                return false; // Stop the form from submitting
+            }
+
+            // Check if a gender is selected
+            let genderSelected = false;
+            for (let i = 0; i < form["gender"].length; i++) {
+                if (form["gender"][i].checked) {
+                    genderSelected = true;
+                    break;
+                }
+            }
+            if (!genderSelected) {
+                alert("Please select your gender.");
+                return false; // Stop the form from submitting
+            }
+
+            // Check if at least one language is selected
+            for (let i = 0; i < languages.length; i++) {
+                if (languages[i].checked) {
+                    langChecked = true;
+                    break;
+                }
+            }
+            if (!langChecked) {
+                alert("Please select at least one language.");
+                return false; // Stop the form from submitting
+            }
+
+            // Check if a state is selected
+            if (state === "") {
+                alert("Please select your state.");
+                return false; // Stop the form from submitting
+            }
+
+            // If all checks pass, allow the form to submit
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>JS Form Validation</h1>
+        <!-- The form where users enter their details -->
+        <form name="myForm" onsubmit="return validateForm()">
+            <!-- Input fields for user details -->
+            <input type="text" placeholder="User Name *" name="username">
+            <input type="password" placeholder="Password *" name="password">
+            <input type="date" placeholder="DOB *" name="dob">
+            <input type="email" placeholder="eMail id *" name="email">
+            <input type="number" placeholder="Mobile Number *" name="mobile">
+            
+            <!-- Radio buttons for gender selection -->
+            <div class="radio-group">
+                <br>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+            </div>
+            
+            <!-- Checkboxes for selecting known languages -->
+            <div class="checkbox-group">
+                <br>
+                <input type="checkbox" name="language" value="english"> English
+                <input type="checkbox" name="language" value="hindi"> Hindi
+                <input type="checkbox" name="language" value="telugu"> Telugu
+                <input type="checkbox" name="language" value="marathi"> Marathi
+                <input type="checkbox" name="language" value="bengali"> Bengali
+                <input type="checkbox" name="language" value="kannada"> Kannada
+                <input type="checkbox" name="language" value="gujarati"> Gujarati
+                <input type="checkbox" name="language" value="tamil"> Tamil
+                <input type="checkbox" name="language" value="punjabi"> Punjabi
+            </div>
+            
+            <!-- Dropdown for selecting state -->
+            <label for="state">State:</label>
+            <select name="state">
+                <option value="">Select State *</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Kerala">Kerala</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Bihar">Bihar</option>
+            </select><br><br>
+
+            <!-- Submit button -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
+
+<!-- 
+HTML Head Section:
+
+Contains the title and the script for form validation.
+Script Section:
+
+validateForm(): A function that checks if the form is correctly filled.
+let form = document.forms["myForm"];: Gets the form with the name "myForm".
+Various variables store the user inputs.
+Patterns (regex) are defined to check the format of the username, password, email, and mobile number.
+If any field fails validation, an alert message is shown and the form submission is stopped.
+Form Section:
+
+form name="myForm" onsubmit="return validateForm()": The form has a name "myForm" and uses validateForm() on submit.
+Input fields for username, password, date of birth (DOB), email, and mobile number.
+Radio buttons for selecting gender.
+Checkboxes for selecting languages.
+Dropdown for selecting state.
+Submit button to submit the form. -->

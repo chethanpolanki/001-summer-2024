@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Form Validation</title>
+    <style>
+        body {
+            background-color: #202020;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffc9c9;
+            padding: 20px;
+            border-radius: 30px 0px 30px 0px;
+            box-shadow: 0 0 5px rgb(151, 108, 108);
+            text-align: center;
+            width: 400px;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #453e3e;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select,
+        input[type="submit"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            background-color: #fff;
+        }
+        .radio-group,
+        .checkbox-group {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let form = document.forms["myForm"];
+            let username = form["username"].value;
+            let password = form["password"].value;
+            let dob = form["dob"].value;
+            let email = form["email"].value;
+            let mobile = form["mobile"].value;
+            let gender = form["gender"].value;
+            let languages = form["language"];
+            let state = form["state"].value;
+            let langChecked = false;
+
+            let usernamePattern = /^[a-zA-Z]+$/;
+            let passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let mobilePattern = /^\d{10}$/;
+
+            if (!usernamePattern.test(username)) {
+                alert("Username can only contain upper and lower case alphabets.");
+                return false;
+            }
+            if (!passwordPattern.test(password)) {
+                alert("Password must be at least 8 characters long and contain at least one upper case letter, one number, and one special character.");
+                return false;
+            }
+            if (dob === "") {
+                alert("Date of Birth is required.");
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert("Invalid email format.");
+                return false;
+            }
+            if (!mobilePattern.test(mobile)) {
+                alert("Mobile number must be 10 digits.");
+                return false;
+            }
+            if (gender === "") {
+                alert("Please select your gender.");
+                return false;
+            }
+            for (let i = 0; i < languages.length; i++) {
+                if (languages[i].checked) {
+                    langChecked = true;
+                    break;
+                }
+            }
+            if (!langChecked) {
+                alert("Please select at least one language.");
+                return false;
+            }
+            if (state === "") {
+                alert("Please select your state.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>JS Form Validation</h1>
+        <form name="myForm" onsubmit="return validateForm()">
+            <input type="text" placeholder="User Name *" name="username">
+            <input type="password" placeholder="Password *" name="password">
+            <label>DOB:</label>
+            <input type="date" placeholder="DOB *" name="dob">
+            <input type="email" placeholder="eMail id *" name="email">
+            <input type="number" placeholder="Mobile Number *" name="mobile">
+            
+            <div class="radio-group">
+                <label>Gender:</label>
+                <br>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+            </div>
+            
+            <div class="checkbox-group">
+                <label>Languages known:</label>
+                <br>
+                <input type="checkbox" name="language" value="english"> English
+                <input type="checkbox" name="language" value="hindi"> Hindi
+                <input type="checkbox" name="language" value="telugu"> Telugu
+                <input type="checkbox" name="language" value="marathi"> Marathi
+                <input type="checkbox" name="language" value="bengali"> Bengali
+                <input type="checkbox" name="language" value="kannada"> Kannada
+                <input type="checkbox" name="language" value="gujarati"> Gujarati
+                <input type="checkbox" name="language" value="tamil"> Tamil
+                <input type="checkbox" name="language" value="punjabi"> Punjabi
+            </div>
+            
+            <label for="state">State:</label>
+            <select name="state">
+                <option value="">Select State *</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Kerala">Kerala</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Bihar">Bihar</option>
+            </select><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
