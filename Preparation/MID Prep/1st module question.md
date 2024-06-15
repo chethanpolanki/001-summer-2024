@@ -72,7 +72,9 @@
   
 ## WEB-SYSTEM ARCHITECTURE
 
-Refer this here [WEB-SYSTEM ARCHITECTURE](https://medium.com/@softkraft/web-application-architecture-complete-guide-diagrams-1b2d77fe3d2e)
+Refer this here [WEB-SYSTEM ARCHITECTURE MEDIUM ARTICLE](https://medium.com/@softkraft/web-application-architecture-complete-guide-diagrams-1b2d77fe3d2e)
+
+Refer the PPT [Last Year PPT](https://github.com/chethanpolanki/001-summer-2024/blob/9037d53d597a0e89d6228adeff8e3da745a56c9e/VTOP%20Uploads/CoursePage-Material_SUMSEM2023-24_CSE2015_ETH_VL2023240700502_13647_2024-06-14_17-30-56/Web%20System%20Architecture.pdf)
 
 ## DNS SERVER and Different Types
 
