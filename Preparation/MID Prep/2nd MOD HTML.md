@@ -472,3 +472,262 @@ type="i" The list items will be numbered with lowercase roman numbers -->
   <li>Milk</li>
 </ol>
 ```
+
+# CSS
+
+## Designing a Webpage
+
+```html
+<html>
+<head>
+<title>My ePortfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 50px; /* Add padding to make space for the footer */
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            background-color: #e9e49b;
+        }
+
+        header {
+            background-color: #246c0c;
+            padding: 10px 0px 50px 0px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: right;
+        }
+
+        .menu-item {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .welcome-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .welcome-section h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #246c0c;
+        }
+
+        .welcome-section p {
+            color: #333;
+        }
+
+        .circular-image {
+            border-radius: 50%;
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .cards-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #246c0c;
+            border-radius: 10px;
+            text-align: center;
+            width: 25%;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .card h4 {
+            color: #246c0c;
+        }
+
+        .card p {
+            color: #333;
+        }
+
+        .card a {
+            display: inline;
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .combined-section {
+            padding: 20px;
+            background-color: #e9e49b;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .combined-section .about {
+            width: 70%;
+            background-color: #f9f9f9;
+            border-radius: 12%;
+            padding: 20px;
+            text-align: justify;
+        }
+
+        .combined-section .about h2 {
+            color: #246c0c;
+        }
+
+        .combined-section .about p {
+            color: #333;
+        }
+
+        .combined-section .articles {
+            margin-top: 1.5%;
+            width: 25%;
+            background-color: #f9f9f9;
+            border-radius: 20% 0% 20% 0%;
+            border-color: 2px solid #246c0c;
+            
+        }
+
+        .combined-section .articles h2 {
+            color: #246c0c;
+            margin-left: 5%;
+        }
+
+        .combined-section .articles ul {
+            list-style: none;
+            padding: 0;
+            margin-left: 5%;
+        }
+
+        .combined-section .articles ul li {
+            margin-bottom: 10px;
+        }
+
+        .combined-section .articles ul li a {
+            color: #246c0c;
+            text-decoration: none;
+        }
+
+        .combined-section .articles img {
+            width: 100px;
+            height: auto;
+        }
+
+        footer {
+            background-color: #246c0c;
+            color: white;
+            text-align: left;
+            padding: 10px 0px 10px 100px;
+            width: 90%;
+            margin: 10% auto;
+            position: flex;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="button-wrapper">
+                    <ul>
+                        <div class="menu-item">
+                            <li><a href="#">Home</a></li>
+                        </div>
+                        <div class="menu-item">
+                            <li><a href="#">About</a></li>
+                        </div>
+                        <div class="menu-item">
+                            <li><a href="#">Portfolio</a></li>
+                        </div>
+                        <div class="menu-item">
+                            <li><a href="#">Contact</a></li>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="welcome-section" style="overflow: auto;">
+                <div style="float: left; width: 70%;">
+                    <h1 style="border-bottom: 2px solid #246c0c; display: inline;">Welcome to my ePortfolio</h1>
+                    <p>Myself Chethan Polanki and this is my E-Portfolio</p>
+                </div>
+                <div style="float: right; width: 30%;">
+                    <img src="greenglobe.png" alt="Globe" class="circular-image">
+                </div>
+            </section>
+            <section class="cards-section">
+                <div class="card">
+                    <h4>See My Portfolio</h4>
+                    <img src="eportfolio.jpg" alt="Portfolio">
+                    <p>Mauris condimentum ...</p>
+                    <a href="#">MORE</a>
+                </div>
+                <div class="card">
+                    <h4>Checkout My Classwork</h4>
+                    <img src="design.jpg" alt="Classwork">
+                    <p>Mauris condimentum ...</p>
+                    <a href="#">MORE</a>
+                </div>
+                <div class="card">
+                    <h4>Read More About Me</h4>
+                    <img src="me.png" alt="This is me">
+                    <p> congue maximus...</p>
+                    <a href="#">MORE</a>
+                </div>
+            </section>
+            <section class="combined-section">
+                <div class="about">
+                    <h2>Why I Love Web Design</h2>
+                    <p>Web Design is so awesome! I can design pages for people and use my artistic abilities and computer skills and instantly create something that anyone in the world can see! My first love is <b>Graphic Design</b>. I love how a good layout can lead to an eye catching creation that communicate an organization’s message. My second love is technology. It’s constantly change, it’s constantly evolving which forces me to be constantly learning new things. For me Web Design is the perfect marriage between both loves! I am constantly adding to my portfolio of design and learning how to create web pages that people want to visit. Web design is my way of continuing learning how to take art off the page and put it on the web for the world.</p>
+                </div>
+                <div class="articles" style="border: #246c0c 2px solid;">
+                    <h2>Article on Web Design</h2>
+                    <ul>
+                        <li style="border-bottom:1px  solid black ;"><a href="#">Article on Web design with a link to external page</a></li>
+                        <li style="border-bottom:1px solid black;"><a href="#">Article on Web design with a link to external page</a></li>
+                        <li><a href="#">Article on Web design with a link to external page</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Site designed by: Polanki Chethan Reg. No: 20BCT0302<br>Summer Semester<br>VIT University, Vellore</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+```
+
+## BOX Animations And CSS Block Model with Examples
+
+[PPT Uploaded By Maam](https://github.com/chethanpolanki/001-summer-2024/blob/78bb5d6cb6f20400361afa778544188f92c6e264/VTOP%20Uploads/CoursePage-Material_SUMSEM2023-24_CSE2015_ETH_VL2023240700502_13647_2024-06-14_17-30-56/SUMSEM2023-24_CSE2015_ETH_VL2023240700502_2024-05-27_Reference-Material-I.pdf)
