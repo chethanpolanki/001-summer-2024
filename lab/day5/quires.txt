@@ -1,0 +1,13 @@
+mongosh
+show dbs
+
+use mydb
+db.createCollection("employee")
+db.employee.insertOne({name:"",age:34, dept:""});
+
+db.employee.insertMany([
+    {},
+    {}
+]);
+
+db.employee.find({name:""}, {dept:1,_id:0})

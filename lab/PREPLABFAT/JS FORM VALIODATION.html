@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script type="text/javascript">
+        function validation() {
+            var user = document.reg.user;
+            var age = document.reg.age;
+            var pass = document.reg.pass;
+            var ulength = user.value.length;
+            var alength = age.value.length;
+            var plength = pass.value.length;
+            var letters = /^[A-Za-z]+$/; // Regular expression to match alphabets
+            var numbers = /^[0-9]+$/;    // Regular expression to match numbers
+
+            if (ulength === 0) {
+                alert("User name cannot be empty");
+                user.focus();
+                return false;
+            } else if (!user.value.match(letters)) {
+                alert("User name should contain only alphabets");
+                user.focus();
+                return false;
+            } else if (alength === 0) {
+                alert("Enter age");
+                age.focus();
+                return false;
+            } else if (!age.value.match(numbers)) {
+                alert("Age should only be in numbers");
+                age.focus();
+                return false;
+            } else if (plength === 0) {
+                alert("Password cannot be empty");
+                pass.focus();
+                return false;
+            } else if (!pass.value.match(numbers)) {
+                alert("Password should contain at least one number");
+                pass.focus();
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <form name="reg" onSubmit="return validation();" method="post">
+            User Name: <input type="text" name="user"/><br/><br/>
+            Age: <input type="text" name="age"/><br/><br/>
+            Password: <input type="password" name="pass"/><br/><br/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </body>
+</html>
