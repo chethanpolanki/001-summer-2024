@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Form Validation</title>
     <script type="text/javascript">
@@ -7,12 +7,23 @@
             var user = document.reg.user;
             var age = document.reg.age;
             var pass = document.reg.pass;
+            var dob = document.reg.dob;
+            var email = document.reg.email;
+            var mobile = document.reg.mobile;
+            var gender = document.reg.gender;
+            var languages = document.reg.language;
+            var state = document.reg.state;
             var ulength = user.value.length;
             var alength = age.value.length;
             var plength = pass.value.length;
             var letters = /^[A-Za-z]+$/; // Regular expression to match alphabets
             var numbers = /^[0-9]+$/;    // Regular expression to match numbers
-
+            var passLetters = /[A-Za-z]/; // Regular expression to check for at least one letter
+            var passNumbers = /[0-9]/;    // Regular expression to check for at least one number
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email format
+            var mobilePattern = /^\d{10}$/; // 10 digit number
+            var langChecked = false; // To check if any language is selected
+            
             if (ulength === 0) {
                 alert("User name cannot be empty");
                 user.focus();
@@ -33,22 +44,113 @@
                 alert("Password cannot be empty");
                 pass.focus();
                 return false;
-            } else if (!pass.value.match(numbers)) {
+            } else if (!pass.value.match(passNumbers)) {
                 alert("Password should contain at least one number");
                 pass.focus();
                 return false;
+            } else if (!pass.value.match(passLetters)) {
+                alert("Password should contain at least one letter");
+                pass.focus();
+                return false;
+            } else if (pass.value.length < 8) {
+                alert("Password should contain at least 8 characters");
+                pass.focus();
+                return false;
+            } else if (dob.value === "") {
+                alert("Date of Birth is required");
+                dob.focus();
+                return false;
+            } else if (email.value === "" || !email.value.match(emailPattern)) {
+                alert("Invalid email format");
+                email.focus();
+                return false;
+            } else if (mobile.value === "" || !mobile.value.match(mobilePattern)) {
+                alert("Mobile number must be 10 digits");
+                mobile.focus();
+                return false;
+            } else if (state.value === "") {
+                alert("Please select your state");
+                state.focus();
+                return false;
             } else {
+                var genderSelected = false;
+                for (var i = 0; i < gender.length; i++) {
+                    if (gender[i].checked) {
+                        genderSelected = true;
+                        break;
+                    }
+                }
+                if (!genderSelected) {
+                    alert("Please select your gender");
+                    return false;
+                }
+
+                for (var i = 0; i < languages.length; i++) {
+                    if (languages[i].checked) {
+                        langChecked = true;
+                        break;
+                    }
+                }
+                if (!langChecked) {
+                    alert("Please select at least one language");
+                    return false;
+                }
+                
                 return true;
             }
         }
     </script>
-    </head>
-    <body>
+</head>
+<body>
+    <div class="container">
+        <h1>Form Validation</h1>
         <form name="reg" onSubmit="return validation();" method="post">
             User Name: <input type="text" name="user"/><br/><br/>
             Age: <input type="text" name="age"/><br/><br/>
             Password: <input type="password" name="pass"/><br/><br/>
+            Date of Birth: <input type="date" name="dob"/><br/><br/>
+            Email: <input type="email" name="email"/><br/><br/>
+            Mobile Number: <input type="text" name="mobile"/><br/><br/>
+
+            <!-- Radio buttons for gender selection -->
+            <div class="radio-group">
+                Gender: <br>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+            </div><br>
+
+            <!-- Checkboxes for selecting known languages -->
+            <div class="checkbox-group">
+                Languages: <br>
+                <input type="checkbox" name="language" value="english"> English
+                <input type="checkbox" name="language" value="hindi"> Hindi
+                <input type="checkbox" name="language" value="telugu"> Telugu
+                <input type="checkbox" name="language" value="marathi"> Marathi
+                <input type="checkbox" name="language" value="bengali"> Bengali
+                <input type="checkbox" name="language" value="kannada"> Kannada
+                <input type="checkbox" name="language" value="gujarati"> Gujarati
+                <input type="checkbox" name="language" value="tamil"> Tamil
+                <input type="checkbox" name="language" value="punjabi"> Punjabi
+            </div><br>
+            
+            <!-- Dropdown for selecting state -->
+            <label for="state">State:</label>
+            <select name="state">
+                <option value="">Select State *</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Kerala">Kerala</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Bihar">Bihar</option>
+            </select><br/><br/>
+
             <input type="submit" value="Submit"/>
         </form>
-    </body>
+    </div>
+</body>
 </html>
