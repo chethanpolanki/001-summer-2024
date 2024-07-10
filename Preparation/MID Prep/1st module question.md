@@ -81,6 +81,7 @@ Refer the PPT [Last Year PPT](https://github.com/chethanpolanki/001-summer-2024/
 - How does Information get to me
 
 ![image](Images/image.png "image")
+
     1. user types the url to the browser and this reqest is sent to the **DNS Resolver**
     2. DNS Resolver get the URl from the USER
     3. DNS resolver sends the request to **Root server**
